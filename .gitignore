@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+dist/
+build/
+
+# Database & uploads — server-local files, never committed
+data/db.json
+data/enquiries.json
+public/uploads/
+
+# Server env
+server/.env
+server/node_modules/
