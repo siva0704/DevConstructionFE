@@ -37,7 +37,7 @@ const mockApiPlugin = (env: Record<string, string>) => {
   // Simple in-memory rate limiter for login attempts
   const loginAttempts = new Map<string, { count: number; resetAt: number }>();
   const MAX_ATTEMPTS = 5;
-  const WINDOW_MS    = 15 * 60 * 1000; // 15 minutes
+  const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 
   const ALLOWED_EXTS = new Set(['jpg', 'jpeg', 'png', 'webp', 'gif']);
   const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5 MB
@@ -275,9 +275,16 @@ const mockApiPlugin = (env: Record<string, string>) => {
 };
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
+  const plugins = [react()];
+
+  // Only load the mock API during local development ('serve'), not during 'build'
+  if (command === 'serve') {
+    plugins.push(mockApiPlugin(env));
+  }
+
   return {
-    plugins: [react(), mockApiPlugin(env)],
+    plugins,
   };
 });
