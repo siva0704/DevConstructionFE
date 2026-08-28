@@ -49,7 +49,12 @@
     }
     
     .logo {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        align-items: flex-end;
+    }
+
+    .logo-full-text {
+        margin-bottom: 8px;
     }
 
     .nav-menu-floating {
