@@ -44,6 +44,10 @@
 }
 
 @media (max-width: 768px) {
+    .logo-full-text {
+        display: none;
+    }
+
     .nav-menu-floating {
         position: absolute;
         top: 80px;

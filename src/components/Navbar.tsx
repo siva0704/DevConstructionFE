@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="nav-container-floating">
         <a href="#home" className="logo">
           <img src={logo} alt="Dev Constructions logo" className="logo-image" style={{ width: '60px', height: 'auto' }} />
-          <span className="logo-text">DEV</span> CONSTRUCTIONS
+          <span className="logo-text">DEV</span><span className="logo-full-text"> CONSTRUCTIONS</span>
         </a>
         
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
