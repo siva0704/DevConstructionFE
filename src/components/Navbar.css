@@ -44,8 +44,12 @@
 }
 
 @media (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+    
     .logo {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .nav-menu-floating {
