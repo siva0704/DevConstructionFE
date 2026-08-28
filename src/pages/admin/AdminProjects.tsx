@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Search, Edit, Trash2 } from 'lucide-react';
-import { fetchProjects, deleteProject, Project } from '../../api/projects';
+import { fetchProjects, deleteProject, Project, getImageUrl } from '../../api/projects';
 
 const AdminProjects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -85,7 +85,7 @@ const AdminProjects = () => {
               {filteredProjects.map(project => (
                 <tr key={project.id}>
                   <td>
-                    <img src={project.coverImage} alt={project.name} className="admin-table-img" />
+                    <img src={getImageUrl(project.coverImage)} alt={project.name} className="admin-table-img" />
                   </td>
                   <td className="admin-font-medium">{project.name}</td>
                   <td>{project.category}</td>

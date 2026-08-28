@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ImagePlus, X, Save, ArrowLeft } from 'lucide-react';
-import { fetchProjectById, createProject, updateProject, Project } from '../../api/projects';
+import { fetchProjectById, createProject, updateProject, Project, getImageUrl } from '../../api/projects';
 
 const AdminProjectForm = () => {
   const { id } = useParams();
@@ -199,7 +199,7 @@ const AdminProjectForm = () => {
             <div className="admin-image-upload">
               {formData.coverImage ? (
                 <div className="admin-image-preview">
-                  <img src={formData.coverImage} alt="Cover Preview" />
+                  <img src={getImageUrl(formData.coverImage)} alt="Cover Preview" />
                   <button type="button" className="admin-image-remove" onClick={removeImage}>
                     <X size={16} />
                   </button>

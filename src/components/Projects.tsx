@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { fetchProjects, Project } from '../api/projects';
+import { fetchProjects, Project, getImageUrl } from '../api/projects';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -55,7 +55,7 @@ const Projects = () => {
           <div className="projects-grid">
             {projectData.map(proj => (
               <div className="project-card" key={proj.id}>
-                <img src={proj.coverImage} alt={proj.name} />
+                <img src={getImageUrl(proj.coverImage)} alt={proj.name} />
                 <div className="project-info">
                   <h3>{proj.name}</h3>
                   <p>{proj.location}</p>

@@ -7,6 +7,12 @@
 
 const API_BASE = import.meta.env.VITE_API_URL || '';
 
+export const getImageUrl = (url: string) => {
+  if (!url) return '';
+  if (url.startsWith('/uploads')) return `${API_BASE}${url}`;
+  return url;
+};
+
 export interface Project {
   id?: string;
   name: string;
