@@ -307,6 +307,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.7;
+    text-align: center;
     animation: bounce 2s infinite ease-in-out;
 }
 
@@ -790,6 +791,10 @@ img {
     .hamburger {
         display: flex;
         z-index: 1000;
+    }
+    
+    .hamburger-text {
+        display: none;
     }
     
     .hero-title {
